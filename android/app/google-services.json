@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "594842383243",
+    "project_id": "school-saas-7dd7f",
+    "storage_bucket": "school-saas-7dd7f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594842383243:android:875f25856e0fe66eed358e",
+        "android_client_info": {
+          "package_name": "com.student.parent"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf-8Fn4p16BFqY38iu3UqPHN90_-RzT6Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594842383243:android:30411cb8b2a04725ed358e",
+        "android_client_info": {
+          "package_name": "com.teacher.staff"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf-8Fn4p16BFqY38iu3UqPHN90_-RzT6Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

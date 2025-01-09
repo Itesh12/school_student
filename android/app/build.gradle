@@ -1,0 +1,361 @@
+////plugins {
+////    id "com.android.application"
+////    // START: FlutterFire Configuration
+////    id 'com.google.gms.google-services'
+////    // END: FlutterFire Configuration
+////    id "kotlin-android"
+////    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+////    id "dev.flutter.flutter-gradle-plugin"
+////}
+////
+////android {
+////    namespace = "com.student.parent"
+////    compileSdk = flutter.compileSdkVersion
+////    ndkVersion = flutter.ndkVersion
+////
+////    compileOptions {
+////        sourceCompatibility = JavaVersion.VERSION_1_8
+////        targetCompatibility = JavaVersion.VERSION_1_8
+////    }
+////
+////    kotlinOptions {
+////        jvmTarget = JavaVersion.VERSION_1_8
+////    }
+////
+////    defaultConfig {
+////        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+////        applicationId = "com.student.parent"
+////        // You can update the following values to match your application needs.
+////        // For more information, see: https://flutter.dev/to/review-gradle-config.
+////        minSdk = flutter.minSdkVersion
+////        targetSdk = flutter.targetSdkVersion
+////        versionCode = flutter.versionCode
+////        versionName = flutter.versionName
+////    }
+////
+////    buildTypes {
+////        release {
+////            // TODO: Add your own signing config for the release build.
+////            // Signing with the debug keys for now, so `flutter run --release` works.
+////            signingConfig = signingConfigs.debug
+////        }
+////    }
+////}
+////
+////flutter {
+////    source = "../.."
+////}
+//
+//
+////plugins {
+////    id "com.android.application"
+////    id "kotlin-android"
+////    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+////    id "dev.flutter.flutter-gradle-plugin"
+////    id "com.google.gms.google-services"
+////}
+////
+////android {
+////    namespace = "com.teacher.staff"
+////    compileSdk = 34
+////    ndkVersion = flutter.ndkVersion
+////
+////    compileOptions {
+////        sourceCompatibility = JavaVersion.VERSION_1_8
+////        targetCompatibility = JavaVersion.VERSION_1_8
+////    }
+////
+////    kotlinOptions {
+////        jvmTarget = JavaVersion.VERSION_1_8
+////    }
+////
+////    defaultConfig {
+////        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+////        applicationId = "com.teacher.staff"
+////        // You can update the following values to match your application needs.
+////        // For more information, see: https://flutter.dev/to/review-gradle-config.
+////        minSdk = 23
+////        targetSdk = 34
+////        versionCode = flutter.versionCode
+////        versionName = flutter.versionName
+////        multiDexEnabled true
+////    }
+////
+////    buildTypes {
+////        release {
+////            // TODO: Add your own signing config for the release build.
+////            // Signing with the debug keys for now, so `flutter run --release` works.
+////            signingConfig = signingConfigs.debug
+////        }
+////    }
+////}
+////
+////flutter {
+////    source = "../.."
+////}
+////
+////dependencies {
+////    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+////    implementation "androidx.multidex:multidex:2.0.1"
+////    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+////    implementation "com.google.firebase:firebase-messaging"
+////}
+//
+//
+//buildscript {
+//    dependencies {
+//        classpath("com.android.tools:r8:8.2.47")
+//    }
+//}
+//
+//plugins {
+//    id "com.android.application"
+//    id "kotlin-android"
+//    id "dev.flutter.flutter-gradle-plugin"
+//}
+//
+//def localProperties = new Properties()
+//def localPropertiesFile = rootProject.file('local.properties')
+//if (localPropertiesFile.exists()) {
+//    localPropertiesFile.withReader('UTF-8') { reader ->
+//        localProperties.load(reader)
+//    }
+//}
+//
+//def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+//if (flutterVersionCode == null) {
+//    flutterVersionCode = '16'
+//}
+//
+//def flutterVersionName = localProperties.getProperty('flutter.versionName')
+//if (flutterVersionName == null) {
+//    flutterVersionName = '2.2'
+//}
+//
+//def keystoreProperties = new Properties()
+//def keystorePropertiesFile = rootProject.file('key.properties')
+//if (keystorePropertiesFile.exists()) {
+//    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+//}
+//
+//android {
+//    namespace 'com.student.parent'
+//    compileSdkVersion 34
+//    kotlinOptions {
+////        jvmTarget = JavaVersion.VERSION_17.toString()
+//        jvmTarget = "17"
+//    }
+//
+//    compileOptions {
+//        coreLibraryDesugaringEnabled true
+//        sourceCompatibility = JavaVersion.VERSION_17
+//        targetCompatibility = JavaVersion.VERSION_17
+//    }
+////    ndkVersion = flutter.ndkVersion
+//    ndkVersion = "25.1.8937393"
+//    sourceSets {
+//        main.java.srcDirs += 'src/main/kotlin'
+//    }
+//    lintOptions {
+//        disable 'InvalidPackage'
+//        checkReleaseBuilds false //<- add this line
+//        disable 'ResourceLinkingFailed'
+//    }
+//    dexOptions {
+//        preDexLibraries = false
+//    }
+//    defaultConfig {
+//        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+//        applicationId "com.student.parent"
+//        minSdkVersion 24
+//        targetSdkVersion 34
+//        versionCode flutterVersionCode.toInteger()
+//        versionName flutterVersionName
+//        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        multiDexEnabled true
+//        //comment this line when app is in debug mode it's only works for relase apk
+//        ndk {
+//            abiFilters "armeabi-v7a","arm64-v8a","x86","x86_64"
+//        }
+//    }
+////    signingConfigs {
+////        release {
+////            keyAlias keystoreProperties['keyAlias']
+////            keyPassword keystoreProperties['keyPassword']
+////            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+////            //storeFile file(keystoreProperties['storeFile'])
+////            storePassword keystoreProperties['storePassword']
+////        }
+//
+////    }
+//
+//    buildTypes {
+//        release {
+//            // TODO: Add your own signing config for the release build.
+//            // Signing with the debug keys for now, so `flutter run --release` works.
+////            signingConfig signingConfigs.release
+////            minifyEnabled false
+////            useProguard true
+//            //signingConfig signingConfigs.debug
+//            //useProguard true
+//            minifyEnabled false
+//            shrinkResources false
+//
+//            signingConfig signingConfigs.debug
+////            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), ' proguard-rules.pro'
+//        }
+//    }
+//
+//    aaptOptions {
+//        noCompress 'mp3', 'png', 'jpg'
+//    }
+//
+//
+//}
+//
+//flutter {
+//    source '../..'
+//}
+//
+//dependencies {
+////    implementation platform('com.google.firebase:firebase-bom:31.0.2')
+//    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
+//    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
+//    implementation 'com.google.code.gson:gson:2.8.9' // Add this line
+//    implementation 'com.google.firebase:firebase-auth'
+//    implementation 'androidx.core:core-ktx:1.12.0'
+//    implementation ('com.android.support:multidex:2.0.1') {
+//        exclude module: "play-services-safetynet"
+//    }
+//
+//}
+//
+
+
+buildscript {
+    dependencies {
+        classpath("com.android.tools:r8:8.2.47")
+    }
+}
+
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '16'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '2.2'
+}
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+android {
+    namespace 'com.student.parent'
+    compileSdkVersion 34
+    kotlinOptions {
+//        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = "17"
+    }
+
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+//    ndkVersion = flutter.ndkVersion
+    ndkVersion = "25.1.8937393"
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+        checkReleaseBuilds false //<- add this line
+        disable 'ResourceLinkingFailed'
+    }
+    dexOptions {
+        preDexLibraries = false
+    }
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.teacher.staff"
+        minSdkVersion 24
+        targetSdkVersion 34
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        //comment this line when app is in debug mode it's only works for relase apk
+        ndk {
+            abiFilters "armeabi-v7a","arm64-v8a","x86","x86_64"
+        }
+    }
+//    signingConfigs {
+//        release {
+//            keyAlias keystoreProperties['keyAlias']
+//            keyPassword keystoreProperties['keyPassword']
+//            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+//            //storeFile file(keystoreProperties['storeFile'])
+//            storePassword keystoreProperties['storePassword']
+//        }
+//    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+//            signingConfig signingConfigs.release
+//            minifyEnabled false
+//            useProguard true
+            //signingConfig signingConfigs.debug
+            //useProguard true
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), ' proguard-rules.pro'
+        }
+    }
+    aaptOptions {
+        noCompress 'mp3', 'png', 'jpg'
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+//    implementation platform('com.google.firebase:firebase-bom:31.0.2')
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3'
+    implementation 'androidx.core:core-ktx:1.10.1' // Example version
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
+    implementation 'com.google.code.gson:gson:2.8.9' // Add this line
+    implementation 'com.google.firebase:firebase-auth'
+    implementation ('com.android.support:multidex:2.0.1') {
+        exclude module: "play-services-safetynet"
+    }
+    implementation "com.google.firebase:firebase-messaging"
+    def emoji2_version = "1.4.0"
+    implementation("androidx.emoji2:emoji2:$emoji2_version")
+    implementation("androidx.emoji2:emoji2-views:$emoji2_version")
+    implementation("androidx.emoji2:emoji2-views-helper:$emoji2_version")
+}
+
